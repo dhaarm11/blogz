@@ -5,7 +5,7 @@
     <form method='post'>
         <label>
             Title:
-            <input type="text" name='title' />
+            <input type="text" name='title' value= "{{title}}"/>
             <span class="error">{{title_error}}</span>
             <br>
             <br>
@@ -13,7 +13,7 @@
         <label>
             My New Post:
             <br>
-            <textarea name="body" rows="10"></textarea>
+            <textarea name="body" rows="10">{{body}}</textarea>
             <br>
         </label>    
         <input type="submit" value='Add Entry' />

@@ -25,6 +25,7 @@ class Blog(db.Model):
 def newpost():
     if request.method == 'POST':
 
+
         blog_title = request.form['title']
         blog_body = request.form['body']
         title_error = ""
@@ -32,11 +33,11 @@ def newpost():
 
         if blog_title == "":
             title_error = "Title was missing."
-            return render_template('new.html', title_error=title_error, body_error=body_error)
+            return render_template('new.html', title_error=title_error, body_error=body_error, title=blog_title, body=blog_body)
         
         elif blog_body == "":
             body_error = "Body was missing."
-            return render_template('new.html', title_error=title_error, body_error=body_error)
+            return render_template('new.html', title_error=title_error, body_error=body_error, title=blog_title, body=blog_body)
 
         else:
             new_post = Blog(title=blog_title, body=blog_body)
